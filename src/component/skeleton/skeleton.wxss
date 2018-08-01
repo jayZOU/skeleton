@@ -1,0 +1,18 @@
+.skeleton{
+  background: rgb(194, 207, 214);
+  animation-duration: 2s;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: .4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .4;
+  }
+}
