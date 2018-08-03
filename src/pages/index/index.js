@@ -7,7 +7,7 @@ Page({
 		motto: 'Hello World',
 		userInfo: {
 			avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/SYiaiba5faeraYBoQCWdsBX4hSjFKiawzhIpnXjejDtjmiaFqMqhIlRBqR7IVdbKE51npeF6X1cXxtDQD2bzehgqMA/132',
-			nickName: 'jay'
+			nickName: 'jayzou'
 		},
 		lists: [
 			'aslkdnoakjbsnfkajbfk',

@@ -1,11 +1,20 @@
 Component({
 	properties: {
+		bgcolor: {
+			type: String,
+			value: '#FFF'
+		},
 		selector: {
 			type: String,
 			value: 'skeleton'
+		},
+		loading: {
+			type: String,
+			value: 'spin'
 		}
 	},
 	data: {
+		loadingAni: ['spin', 'chiaroscuro'],
 		systemInfo: {},
 		skeletonRectLists: [],
 		skeletonCircleLists: []
@@ -16,9 +25,12 @@ Component({
 		this.setData({
 			systemInfo: {
 				width: systemInfo.windowWidth,
-				height: systemInfo.windowHeight,
-			}
+				height: systemInfo.windowHeight
+			},
+			loading: this.data.loadingAni.includes(this.data.loading) ? this.data.loading : 'spin'
 		})
+
+
 
 	},
 	ready: function () {
@@ -28,7 +40,7 @@ Component({
 		wx.createSelectorQuery().selectAll(`.${this.data.selector}`).boundingClientRect().exec(function(res){
 			console.log(res);
 			that.setData({
-				systemInfo: res[0][0]
+				'systemInfo.height': res[0][0].height + res[0][0].top
 			})
 		});
 
@@ -36,21 +48,25 @@ Component({
 		this.rectHandle();
 
 		//绘制圆形
-		this.radius();
+		this.radiusHandle();
 
 	},
 	methods: {
 		rectHandle: function () {
 			const that = this;
 
+			//绘制不带样式的节点
 			wx.createSelectorQuery().selectAll(`.${this.data.selector}-rect`).boundingClientRect().exec(function(res){
 				console.log(res);
 				that.setData({
 					skeletonRectLists: res[0]
 				})
+
+				console.log(that.data);
 			});
+
 		},
-		radius: function () {
+		radiusHandle: function () {
 			const that = this;
 
 			wx.createSelectorQuery().selectAll(`.${this.data.selector}-radius`).boundingClientRect().exec(function(res){
@@ -61,7 +77,8 @@ Component({
 
 				console.log(that.data);
 			});
-		}
+		},
+
 	}
 
 })

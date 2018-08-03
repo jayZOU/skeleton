@@ -1,4 +1,7 @@
-<skeleton selector="skeleton" wx:if="{{showSkeleton}}"></skeleton>
+<skeleton selector="skeleton"
+          loading="spin"
+          bgcolor="#FFF"
+          wx:if="{{showSkeleton}}"></skeleton>
 
 <!--index.wxml-->
 <view class="container skeleton">
