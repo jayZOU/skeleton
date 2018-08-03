@@ -80,7 +80,7 @@ Page({
 | ------- | ------ | --------- | --------------- | ------------------------------------------------------------ |
 | selector | String | No        | skelton | 渲染节点的标识前缀，比如```selector="skeleton"```，那么页面根节点就是```class="skeleton"```绘制矩形就是```class="skeleton-rect"```，圆形就是```class="skeleton-radius"```|
 | loading | String | No        | spin            | 骨架屏渲染时的动画，有`spin`和`chiaroscuro` |
-| bgclor | String  | No        | \#FFF            | 骨架屏背景 |
+| bgcolor | String  | No        | \#FFF            | 骨架屏背景 |
 
 ## Note
 业务侧可以自行判断数据是否加载完成，进而隐藏骨架屏，比如  
