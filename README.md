@@ -89,5 +89,5 @@ Page({
 以最小节点原则添加相应的class，比如
 `<view class="box skeleton-rect">这是有margin和padding属性的文案</view>`
 这里不要给view添加class，不然绘制区域会大很多，应该改成这样  
-`<view class="box"><text class="skeleton-rect">这是有margin和padding属性的文案</test></view>`
+`<view class="box"><text class="skeleton-rect">这是有margin和padding属性的文案</text></view>`
 
