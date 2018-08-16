@@ -53,7 +53,7 @@ Page({
 	        <!--skeleton-radius 绘制圆形-->
             <image class="userinfo-avatar skeleton-radius" src="{{userInfo.avatarUrl}}"
                    mode="cover"></image>
-             <!--skeleton-radius 绘制矩形-->
+             <!--skeleton-rect 绘制矩形-->
             <text class="userinfo-nickname skeleton-rect">{{userInfo.nickName}}</text>
         </block>
     </view>
