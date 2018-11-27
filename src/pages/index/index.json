@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "skeleton": "/component/skeleton/skeleton"
+    "skeleton": "/component/skeleton/skeleton",
+    "component-tag-name": "/component/component-tag-name/component-tag-name"
   }
 }

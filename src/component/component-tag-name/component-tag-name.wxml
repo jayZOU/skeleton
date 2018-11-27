@@ -1,0 +1,6 @@
+<view class="wrapper">
+    <image class="userinfo-avatar skeleton-radius" src="https://sfault-image.b0.upaiyun.com/117/579/1175792133-5b63fce811636_articlex"
+           mode="cover"></image>
+    <view><text class="skeleton-rect">这里是组件的内部节点</text></view>
+    <view><text class="skeleton-rect">这里是组件的内部节点</text></view>
+</view>

@@ -5,6 +5,8 @@
 
 <!--index.wxml-->
 <view class="container skeleton">
+    <component-tag-name></component-tag-name>
+
     <view class="userinfo">
         <block>
             <image class="userinfo-avatar skeleton-radius" src="{{userInfo.avatarUrl}}"

@@ -2,17 +2,17 @@
 绘制小程序骨架屏，轻量、方便、快捷
 
 ## 快速上手
-  
+
 引入骨架屏组件
 ```javascript
-//index.json  
-//引入骨架屏组件  
+//index.json
+//引入骨架屏组件
 {
   "usingComponents": {
     "skeleton": "/component/skeleton/skeleton"
   }
 }
-//index.js
+//component-tag-name.js
 //初始化默认的数据，用于撑开页面结构，让骨架屏可以获取到整体的页面结构
 Page({
 	data: {
@@ -37,7 +37,7 @@ Page({
 		}, 3000)
 	}
 })
-  
+
 
 ```
 
@@ -83,11 +83,11 @@ Page({
 | bgclor | String  | No        | \#FFF            | 骨架屏背景 |
 
 ## Note
-业务侧可以自行判断数据是否加载完成，进而隐藏骨架屏，比如  
-`<skeleton selector="skeleton" wx:if="{{showSkeleton}}"></skeleton>`  
+业务侧可以自行判断数据是否加载完成，进而隐藏骨架屏，比如
+`<skeleton selector="skeleton" wx:if="{{showSkeleton}}"></skeleton>`
 
 以最小节点原则添加相应的class，比如
 `<view class="box skeleton-rect">这是有margin和padding属性的文案</view>`
-这里不要给view添加class，不然绘制区域会大很多，应该改成这样  
+这里不要给view添加class，不然绘制区域会大很多，应该改成这样
 `<view class="box"><text class="skeleton-rect">这是有margin和padding属性的文案</test></view>`
 

@@ -6,7 +6,7 @@ Page({
 	data: {
 		motto: 'Hello World',
 		userInfo: {
-			avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/SYiaiba5faeraYBoQCWdsBX4hSjFKiawzhIpnXjejDtjmiaFqMqhIlRBqR7IVdbKE51npeF6X1cXxtDQD2bzehgqMA/132',
+			avatarUrl: 'https://sfault-image.b0.upaiyun.com/117/579/1175792133-5b63fce811636_articlex',
 			nickName: 'jayzou'
 		},
 		lists: [
@@ -22,6 +22,6 @@ Page({
 			that.setData({
 				showSkeleton: false
 			})
-		}, 3000)
+		}, 2000)
 	}
 })
