@@ -15,7 +15,7 @@
         </block>
     </view>
     <view style="margin: 20px 0">
-        <view wx:for="{{lists}}" class="lists">
+        <view wx:for="{{lists}}" wx:key="{{index}}" class="lists">
             <icon type="success" size="20" class="list skeleton-radius"/>
             <text class="skeleton-rect">{{item}}</text>
         </view>
