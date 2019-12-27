@@ -11,6 +11,10 @@ Component({
 		loading: {
 			type: String,
 			value: 'spin'
+		},
+		unit: {
+			type: String,
+			value: 'px'
 		}
 	},
 	data: {
@@ -30,12 +34,9 @@ Component({
 			loading: this.data.loadingAni.includes(this.data.loading) ? this.data.loading : 'spin'
 		})
 
-
-
 	},
 	ready: function () {
 		const that = this;
-
 		//绘制背景
 		wx.createSelectorQuery().selectAll(`.${this.data.selector}`).boundingClientRect().exec(function(res){
 			that.setData({
