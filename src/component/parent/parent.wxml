@@ -1,4 +1,0 @@
-<!-- 组件模板 -->
-<view class="wrapper">
-    <slot></slot>
-</view>

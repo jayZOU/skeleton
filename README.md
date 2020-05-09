@@ -1,46 +1,34 @@
-# skeleton
+# miniprogram-skeleton
+
 绘制小程序骨架屏，轻量、方便、快捷
 
-## 快速上手
+## Use
 
-引入骨架屏组件
-```javascript
-//index.json
-//引入骨架屏组件
-{
-  "usingComponents": {
-    "skeleton": "/component/skeleton/skeleton"
-  }
-}
-//index.js
-//初始化默认的数据，用于撑开页面结构，让骨架屏可以获取到整体的页面结构
-Page({
-	data: {
-		motto: 'Hello World',
-		userInfo: {
-			avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/SYiaiba5faeraYBoQCWdsBX4hSjFKiawzhIpnXjejDtjmiaFqMqhIlRBqR7IVdbKE51npeF6X1cXxtDQD2bzehgqMA/132',
-			nickName: 'jayzou'
-		},
-		lists: [
-			'aslkdnoakjbsnfkajbfk',
-			'qwrwfhbfdvndgndghndeghsdfh',
-			'qweqwtefhfhgmjfgjdfghaefdhsdfgdfh',
-		],
-		showSkeleton: true   //骨架屏显示隐藏
-	},
-	onLoad: function () {
-		const that = this;
-		setTimeout(() => {     //3S后隐藏骨架屏
-			that.setData({
-				showSkeleton: false
-			})
-		}, 3000)
-	}
-})
+### 一、安装和引入
 
+#### 1.安装组件： 
 
 ```
+npm install --save miniprogram-skeleton
+```
+#### 2.引入skeleton自定义组件
 
+```json
+{
+  "usingComponents": {
+    "skeleton": "../miniprogram_npm/miniprogram-skeleton"
+  }
+}
+```
+
+**小程序中npm的配置及使用：**
+- 在微信开发者工具中，设置 —> 项目设置—> 勾选使用npm模块。
+- 在微信开发者工具中，工具 —> 构建npm，构建完成会生成 `miniprogram_npm` 文件夹，项目用到的npm包都在这里。
+- 按照页面的使用路径，从 `miniprogram_npm` 引入需要的包。
+
+### 二、使用骨架屏组件
+
+#### 1.在wxml页面需要用到的地方使用，如下：
 ```html
 <!--引入骨架屏模版 -->
 <skeleton wx:if="{{showSkeleton}}"></skeleton>
@@ -74,6 +62,36 @@ Page({
 </view>
 ```
 
+#### 2.在js页面需要用到的地方使用，如下：
+
+```javascript
+//index.js
+//初始化默认的数据，用于撑开页面结构，让骨架屏可以获取到整体的页面结构
+Page({
+	data: {
+		motto: 'Hello World',
+		userInfo: {
+			avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/SYiaiba5faeraYBoQCWdsBX4hSjFKiawzhIpnXjejDtjmiaFqMqhIlRBqR7IVdbKE51npeF6X1cXxtDQD2bzehgqMA/132',
+			nickName: 'jayzou'
+		},
+		lists: [
+			'aslkdnoakjbsnfkajbfk',
+			'qwrwfhbfdvndgndghndeghsdfh',
+			'qweqwtefhfhgmjfgjdfghaefdhsdfgdfh',
+		],
+		showSkeleton: true   //骨架屏显示隐藏
+	},
+	onLoad: function () {
+		const that = this;
+		setTimeout(() => {     //3S后隐藏骨架屏
+			that.setData({
+				showSkeleton: false
+			})
+		}, 3000)
+	}
+})
+```
+
 ## API
 
 | Options | Type   | Required | Default         | Description                                                  |
@@ -90,4 +108,3 @@ Page({
 `<view class="box skeleton-rect">这是有margin和padding属性的文案</view>`
 这里不要给view添加class，不然绘制区域会大很多，应该改成这样
 `<view class="box"><text class="skeleton-rect">这是有margin和padding属性的文案</text></view>`
-
