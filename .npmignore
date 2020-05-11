@@ -14,3 +14,4 @@ docs
 miniprogram_dev
 node_modules
 coverage
+tsconfig.json
