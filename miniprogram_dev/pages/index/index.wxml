@@ -1,0 +1,23 @@
+<skeleton selector="skeleton"
+          loading="spin"
+          bgcolor="#FFF"
+          unit="px"
+          wx:if="{{showSkeleton}}"></skeleton>
+
+<view class="container skeleton">
+    <view class="userinfo">
+        <block>
+            <image class="userinfo-avatar skeleton-radius" src="{{userInfo.avatarUrl}}"
+                   mode="cover"></image>
+            <text class="userinfo-nickname skeleton-rect" data-s-width="58" data-s-height="25">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+    <view class="content">
+        <view class="line">
+            <text class="skeleton-rect">小程序骨架屏原作者：邹世杰</text>
+        </view>
+        <navigator class="line" url="https://github.com/jayZOU/skeleton">
+            <view class="skeleton-rect">小程序骨架屏原github地址：<br/> https://github.com/jayZOU/skeleton</view>
+        </navigator>
+    </view>
+</view>
