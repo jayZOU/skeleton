@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "skeleton": "/component/skeleton/skeleton",
-    "component-tag-name": "/component/component-tag-name/component-tag-name",
-    "parent": "/component/parent/parent",
-    "child": "/component/child/child"
-  }
-}
