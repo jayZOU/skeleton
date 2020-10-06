@@ -1,0 +1,11 @@
+<!-- 组件模板 -->
+<view class="item">
+    <view class="title_sub"><text class="sk-lists-rect">{{feature.title}}</text></view>
+    <view class="list">
+        <view wx:for="{{feature.lists}}" wx:key="*this">
+            <child>
+                <text class="sk-lists-rect">{{item}}</text>
+            </child>
+        </view>
+    </view>
+</view>

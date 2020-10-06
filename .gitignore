@@ -62,3 +62,4 @@ typings/
 
 .idea/
 src/project.config.json
+miniprogram_npm

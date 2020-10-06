@@ -1,16 +1,25 @@
 {
-  "name": "miniprogram-skeleton",
-  "version": "1.0.4",
-  "description": "",
+  "name": "@best-components/miniprogram-skeleton",
+  "version": "2.0.3",
+  "description": "绘制小程序骨架屏，轻量、方便、快捷",
   "main": "miniprogram_dist/index.js",
   "scripts": {
-    "build": "cp -rf ./src/* ./miniprogram_dist/"
+    "build": "cp -rf ./src/component/skeleton/ ./miniprogram_dist/"
   },
   "miniprogram": "miniprogram_dist",
   "repository": {
     "type": "git",
-    "url": "https://github.com/habc0807/skeleton"
+    "url": "git+https://github.com/jayZOU/skeleton.git"
   },
   "author": "jayzou",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayZOU/skeleton/issues"
+  },
+  "homepage": "https://github.com/jayZOU/skeleton#readme",
+  "keywords": [
+    "miniprogram",
+    "components",
+    "skeleton"
+  ]
 }

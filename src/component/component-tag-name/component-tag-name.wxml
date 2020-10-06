@@ -1,0 +1,4 @@
+<view class="wrapper">
+    <view><text class="skeleton-rect">这里是组件的内部节点</text></view>
+    <view><text class="skeleton-rect">这里是组件的内部节点</text></view>
+</view>

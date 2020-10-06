@@ -1,0 +1,19 @@
+<skeleton selector="sk"
+          unit="px"
+          region="{{region}}"
+          wx:if="{{showSkeleton}}"></skeleton>
+
+<!--index.wxml-->
+<view class="box sk">
+    <view class="logo">
+        <image class="img sk-header-radius" src="{{header.logo}}"></image>
+    </view>
+    <view class="title">
+        <text class="sk-header-rect">{{header.title}}</text>
+    </view>
+    <parent feature="{{feature}}"></parent>
+    <view class="item">
+        <view class="title_sub">非骨架屏生成区域</view>
+        <view>这是一块没有骨架屏遮盖区域</view>
+    </view>
+</view>
