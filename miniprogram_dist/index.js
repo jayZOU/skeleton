@@ -24,7 +24,7 @@ Component({
 			}
 		}
 	},
-	ready() {
+	attached() {
 		for(let key in this.data.region) {
 			this.data.skeletonRegion[key] = {
 				isShow: true,

@@ -18,14 +18,14 @@
 #### 1.安装组件： 
 
 ```
-npm install --save miniprogram-skeleton
+npm i @best-components/miniprogram-skeleton
 ```
 #### 2.引入skeleton自定义组件
 
 ```json
 {
   "usingComponents": {
-    "skeleton": "../miniprogram_npm/miniprogram-skeleton"
+    "skeleton": "@best-components/miniprogram-skeleton"
   }
 }
 ```
