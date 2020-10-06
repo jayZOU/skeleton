@@ -4,7 +4,7 @@
   "description": "",
   "main": "miniprogram_dist/index.js",
   "scripts": {
-    "build": "cp -rf ./src/* ./miniprogram_dist/"
+    "build": "cp -rf ./src/component/skeleton/ ./miniprogram_dist/"
   },
   "miniprogram": "miniprogram_dist",
   "repository": {

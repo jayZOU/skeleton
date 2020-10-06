@@ -1,0 +1,18 @@
+.box{
+  padding: 40rpx;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+}
+.img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.title{
+  font-size: 40rpx;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 30rpx;
+}
