@@ -16,3 +16,12 @@
   font-weight: 800;
   margin-bottom: 30rpx;
 }
+.title_sub{
+  font-size: 36rpx;
+  font-weight: 700;
+  margin: 20rpx 0;
+}
+.item{
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+}

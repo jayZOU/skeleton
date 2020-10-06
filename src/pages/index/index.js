@@ -24,16 +24,16 @@ Page({
 		showSkeleton: true
 	},
 	onLoad: function () {
-		const that = this;
-		// setTimeout(() => {
-		// 	that.setData({
-		// 		'region.header': false
-		// 	})
-		// }, 2000)
-		// setTimeout(() => {
-		// 	that.setData({
-		// 		'region.lists': false
-		// 	})
-		// }, 3000)
+		const that = this
+		setTimeout(() => {
+			that.setData({
+				'region.header': false
+			})
+		}, 2000)
+		setTimeout(() => {
+			that.setData({
+				'region.lists': false
+			})
+		}, 3000)
 	}
 })

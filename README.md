@@ -2,6 +2,15 @@
 
 绘制小程序骨架屏，轻量、方便、快捷
 
+## 特性
+1. 运行时渲染，支持动态生成骨架屏
+2. 支持分块渲染，渐进式展示页面
+3. 支持多种骨架屏动画
+4. 支持npm
+
+## 示例
+![skeleton](https://image-static.segmentfault.com/218/832/2188326444-5f7c145a9cf9a_articlex)
+
 ## Use
 
 ### 一、安装和引入
@@ -31,33 +40,23 @@ npm install --save miniprogram-skeleton
 #### 1.在wxml页面需要用到的地方使用，如下：
 ```html
 <!--引入骨架屏模版 -->
-<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<skeleton selector="sk"
+          unit="px"
+          region="{{region}}"></skeleton>
 
 <!--index.wxml-->
 <!--给页面根节点class添加skeleton, 用于获取当前页面尺寸，没有的话就默认使用屏幕尺寸-->
-<view class="container skeleton">
-    <view class="userinfo">
-        <block>
-	        <!--skeleton-radius 绘制圆形-->
-            <image class="userinfo-avatar skeleton-radius" src="{{userInfo.avatarUrl}}"
-                   mode="cover"></image>
-             <!--skeleton-rect 绘制矩形-->
-            <text class="userinfo-nickname skeleton-rect">{{userInfo.nickName}}</text>
-        </block>
+<view class="box sk">
+    <view class="logo">
+        <image class="img sk-header-radius" src="{{header.logo}}"></image>
     </view>
-    <view style="margin: 20px 0">
-        <view wx:for="{{lists}}" class="lists">
-            <icon type="success" size="20" class="list skeleton-radius"/>
-            <text class="skeleton-rect">{{item}}</text>
-        </view>
+    <view class="title">
+        <text class="sk-header-rect">{{header.title}}</text>
     </view>
-
-    <view class="usermotto">
-        <text class="user-motto skeleton-rect">{{motto}}</text>
-    </view>
-
-    <view style="margin-top: 200px;">
-        aaaaaaaaaaa
+    <parent feature="{{feature}}"></parent>
+    <view class="item">
+        <view class="title_sub">非骨架屏生成区域</view>
+        <view>这是一块没有骨架屏遮盖区域</view>
     </view>
 </view>
 ```
@@ -69,23 +68,35 @@ npm install --save miniprogram-skeleton
 //初始化默认的数据，用于撑开页面结构，让骨架屏可以获取到整体的页面结构
 Page({
 	data: {
-		motto: 'Hello World',
-		userInfo: {
-			avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/SYiaiba5faeraYBoQCWdsBX4hSjFKiawzhIpnXjejDtjmiaFqMqhIlRBqR7IVdbKE51npeF6X1cXxtDQD2bzehgqMA/132',
-			nickName: 'jayzou'
+		region: {		//骨架屏区域
+			header: true,
+			lists: true
 		},
-		lists: [
-			'aslkdnoakjbsnfkajbfk',
-			'qwrwfhbfdvndgndghndeghsdfh',
-			'qweqwtefhfhgmjfgjdfghaefdhsdfgdfh',
-		],
-		showSkeleton: true   //骨架屏显示隐藏
+		header: {
+			logo: '../../images/logo.png',
+			title: 'skeleton'
+		},
+		feature: {
+			title: '特性',
+			lists: [
+				'1.运行时渲染，支持动态生成骨架屏',
+				'2.支持分块渲染，渐进式展示页面',
+				'3.支持多种骨架屏动画',
+				'4.支持npm',
+			]
+		}
 	},
 	onLoad: function () {
-		const that = this;
-		setTimeout(() => {     //3S后隐藏骨架屏
+    //隐藏header区域的骨架屏
+		setTimeout(() => {
 			that.setData({
-				showSkeleton: false
+				'region.header': false
+			})
+		}, 2000)
+    //隐藏lists区域的骨架屏
+		setTimeout(() => {
+			that.setData({
+				'region.lists': false
 			})
 		}, 3000)
 	}
@@ -96,14 +107,11 @@ Page({
 
 | Options | Type   | Required | Default         | Description                                                  |
 | ------- | ------ | --------- | --------------- | ------------------------------------------------------------ |
-| selector | String | No        | skelton | 渲染节点的标识前缀，比如```selector="skeleton"```，那么页面根节点就是```class="skeleton"```绘制矩形就是```class="skeleton-rect"```，圆形就是```class="skeleton-radius"```|
-| loading | String | No        | spin            | 骨架屏渲染时的动画，有`spin`和`chiaroscuro` |
-| bgcolor | String  | No        | \#FFF            | 骨架屏背景 |
+| selector | String | No        | skelton | 渲染节点的标识前缀，比如```selector="sk"```，那么页面根节点就是```class="sk"```绘制矩形就是```class="sk-region-rect"```，圆形就是```class="sk-region-radius"``` |
+| unit | String | No        | px          | 骨架屏单位，默认px |
+| region | Object | Yes      |             | 骨架屏渲染区域，可按需分块展示/隐藏骨架屏 |
 
 ## Note
-业务侧可以自行判断数据是否加载完成，进而隐藏骨架屏，比如
-`<skeleton selector="skeleton" wx:if="{{showSkeleton}}"></skeleton>`
-
 以最小节点原则添加相应的class，比如
 `<view class="box skeleton-rect">这是有margin和padding属性的文案</view>`
 这里不要给view添加class，不然绘制区域会大很多，应该改成这样
